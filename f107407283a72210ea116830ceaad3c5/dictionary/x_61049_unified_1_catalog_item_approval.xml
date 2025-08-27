@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="19a114f683e72210ea116830ceaad3c1" label="Catalog Item Approval" max_length="40" name="x_61049_unified_1_catalog_item_approval" type="collection">
         <element label="Catalog item" max_length="32" name="catalog_item" reference="sc_cat_item" type="reference"/>
-        <element label="Source table" max_length="80" name="source_table" type="table_name"/>
-        <element choice="1" label="Approval rule four" max_length="40" name="approval_rule_four" type="choice">
+        <element default="sc_cat_item" label="Source table" max_length="80" name="source_table" read_only="true" type="table_name"/>
+        <element choice="1" choice_field="approval_rule_one" choice_table="x_61049_unified_1_catalog_item_approval" default="any_one" label="Approval rule four" max_length="40" name="approval_rule_four" type="choice">
             <choice/>
         </element>
-        <element choice="1" label="Approval rule two" max_length="40" name="approval_rule_two" type="choice">
+        <element choice="1" choice_field="approval_rule_one" choice_table="x_61049_unified_1_catalog_item_approval" default="any_one" label="Approval rule two" max_length="40" name="approval_rule_two" type="choice">
             <choice/>
         </element>
-        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element choice="1" label="Approval rule five" max_length="40" name="approval_rule_five" type="choice">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element choice="1" choice_field="approval_rule_one" choice_table="x_61049_unified_1_catalog_item_approval" default="any_one" label="Approval rule five" max_length="40" name="approval_rule_five" type="choice">
             <choice/>
         </element>
-        <element choice="1" label="Approval rule one" max_length="40" name="approval_rule_one" type="choice">
-            <choice/>
+        <element choice="1" default="any_one" label="Approval rule one" max_length="40" name="approval_rule_one" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Collect approvals from any one definitions" sequence="200" value="any_one"/>
+                <element inactive_on_update="false" label="Collect approvals from all definitions" sequence="100" value="each_one"/>
+            </choice>
         </element>
-        <element choice="1" label="Approval rule three" max_length="40" name="approval_rule_three" type="choice">
+        <element choice="1" choice_field="approval_rule_one" choice_table="x_61049_unified_1_catalog_item_approval" default="any_one" label="Approval rule three" max_length="40" name="approval_rule_three" type="choice">
             <choice/>
         </element>
         <element label="Active" max_length="40" name="active" type="boolean"/>

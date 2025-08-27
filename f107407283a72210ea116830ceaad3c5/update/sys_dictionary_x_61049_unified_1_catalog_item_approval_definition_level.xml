@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="approval_rule_three" table="x_61049_unified_1_catalog_item_approval">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="level" table="x_61049_unified_1_catalog_item_approval_definition">
         <active>true</active>
         <array>false</array>
         <attributes/>
@@ -11,12 +11,12 @@
 
 })(current);]]></calculation>
         <choice>1</choice>
-        <choice_field>approval_rule_one</choice_field>
-        <choice_table>x_61049_unified_1_catalog_item_approval</choice_table>
-        <column_label>Approval rule three</column_label>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Level</column_label>
         <comments/>
         <create_roles/>
-        <default_value>any_one</default_value>
+        <default_value/>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -26,7 +26,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>approval_rule_three</element>
+        <element>level</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -35,7 +35,7 @@
         <internal_type display_value="Choice">choice</internal_type>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
-        <name>x_61049_unified_1_catalog_item_approval</name>
+        <name>x_61049_unified_1_catalog_item_approval_definition</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -51,14 +51,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-08-27 10:53:58</sys_created_on>
-        <sys_name>Approval rule three</sys_name>
+        <sys_created_on>2025-08-27 11:06:09</sys_created_on>
+        <sys_name>Level</sys_name>
         <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
-        <sys_update_name>sys_dictionary_x_61049_unified_1_catalog_item_approval_approval_rule_three</sys_update_name>
+        <sys_update_name>sys_dictionary_x_61049_unified_1_catalog_item_approval_definition_level</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 13:06:53</sys_updated_on>
+        <sys_updated_on>2025-08-27 11:06:09</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

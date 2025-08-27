@@ -16,7 +16,7 @@
         <column_label>Source table</column_label>
         <comments/>
         <create_roles/>
-        <default_value/>
+        <default_value>sc_cat_item</default_value>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -38,7 +38,7 @@
         <name>x_61049_unified_1_catalog_item_approval</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>false</read_only>
+        <read_only>true</read_only>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -58,7 +58,7 @@
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
         <sys_update_name>sys_dictionary_x_61049_unified_1_catalog_item_approval_source_table</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 10:53:58</sys_updated_on>
+        <sys_updated_on>2025-08-27 11:00:40</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

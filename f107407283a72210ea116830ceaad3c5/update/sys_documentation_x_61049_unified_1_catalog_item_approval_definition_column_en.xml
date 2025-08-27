@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="column" label="Column" language="en" table="x_61049_unified_1_catalog_item_approval_definition">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>column</element>
+            <help/>
+            <hint/>
+            <label>Column</label>
+            <language>en</language>
+            <name>x_61049_unified_1_catalog_item_approval_definition</name>
+            <plural>Columns</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-08-27 12:29:41</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Column</sys_name>
+            <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+            <sys_update_name>sys_documentation_x_61049_unified_1_catalog_item_approval_definition_column_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-08-27 12:29:41</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

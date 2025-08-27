@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="ed34dc3e83e72210ea116830ceaad38e" sys_domain="global" table="x_61049_unified_1_catalog_item_approval" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-08-27 11:01:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6d34dc3e83e72210ea116830ceaad38f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_61049_unified_1_catalog_item_approval" name="x_61049_unified_1_catalog_item_approval" sys_domain="global" view="Default view">ed34dc3e83e72210ea116830ceaad38e</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_61049_unified_1_catalog_item_approval" sys_domain="global" view="Default view">ec5398ba83e72210ea116830ceaad387</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-08-27 11:01:21</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-08-27 11:01:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f934dc3e83e72210ea116830ceaad391</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_61049_unified_1_catalog_item_approval" name="x_61049_unified_1_catalog_item_approval" sys_domain="global" view="Default view">ed34dc3e83e72210ea116830ceaad38e</sys_ui_form>
+            <sys_ui_section caption="Approval Rules" display_value="Approval Rules" name="x_61049_unified_1_catalog_item_approval" sys_domain="global" view="Default view">3934dc3e83e72210ea116830ceaad390</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-08-27 11:01:21</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_61049_unified_1_catalog_item_approval</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-08-27 11:01:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ed34dc3e83e72210ea116830ceaad38e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_61049_unified_1_catalog_item_approval</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+            <sys_update_name>sys_ui_form_sections_ed34dc3e83e72210ea116830ceaad38e</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-08-27 11:01:21</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

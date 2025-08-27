@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="0bc4d032832b2210ea116830ceaad3a8" label="Catalog Item Approval Definition" max_length="40" name="x_61049_unified_1_catalog_item_approval_definition" type="collection">
+        <element label="Script" max_length="8000" name="script" type="script"/>
+        <element choice="1" label="Level" max_length="40" name="level" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="4" sequence="400" value="4"/>
+                <element inactive_on_update="false" label="2" sequence="200" value="2"/>
+                <element inactive_on_update="false" label="5" sequence="500" value="5"/>
+                <element inactive_on_update="false" label="3" sequence="300" value="3"/>
+                <element inactive_on_update="false" label="1" sequence="100" value="1"/>
+            </choice>
+        </element>
+        <element attributes="readable=true,condition_builder=v2," dependent="source_table" dependent_on_field="source_table" label="Condition" max_length="4000" name="condition" type="conditions" use_dependent_field="true"/>
+        <element label="Catalog item approval" max_length="32" name="catalog_item_approval" read_only="true" reference="x_61049_unified_1_catalog_item_approval" type="reference"/>
+        <element attributes="allow_null=true" dependent="source_table" dependent_on_field="source_table" label="Column" max_length="80" name="column" type="field_name" use_dependent_field="true"/>
+        <element label="Group" max_length="32" name="group" reference="sys_user_group" type="reference"/>
+        <element attributes="base_start=true" default="sc_req_item" label="Source table" max_length="80" name="source_table" read_only="true" type="table_name"/>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element choice="1" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="User" sequence="200" value="user"/>
+                <element inactive_on_update="false" label="Dynamic user" sequence="400" value="dynamic_user"/>
+                <element inactive_on_update="false" label="Dynamic group" sequence="300" value="dynamic_group"/>
+                <element inactive_on_update="false" label="Advance scripting" sequence="500" value="Advance scripting"/>
+                <element inactive_on_update="false" label="Group" sequence="100" value="group"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="catalog_item_approval"/>
+        </index>
+        <index name="index2">
+            <element name="group"/>
+        </index>
+        <index name="index3">
+            <element name="user"/>
+        </index>
+    </element>
+</database>
