@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_61049_unified_1.unifiedCatalogApproval</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>unifiedCatalogApproval</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var unifiedCatalogApproval = Class.create();
+unifiedCatalogApproval.prototype = {
+
+    initialize: function(itemSysId) {
+
+        this.itemSysId = itemSysId;
+        this.itemGR = this._getCatalogItem(itemSysId);
+
+    },
+
+
+    /**
+     * Group approval definition by level and get number of records
+     * @param1 column (string), Group by column name
+     * @param2 agg (string), Name of an aggregate to use
+     * return level and definition count as JSON object
+     */
+    groupApprovalDefinitions: function(column, agg) {
+
+        var levels = {};
+
+        var aggGR = new GlideAggregate("x_61049_unified_1_catalog_item_approval_definition");
+        aggGR.addEncodedQuery("catalog_item_approval.catalog_item=" + this.itemSysId);
+        aggGR.addEncodedQuery("active=true");
+        aggGR.addAggregate(agg, column);
+        aggGR.query();
+
+        while (aggGR.next()) {
+            levels[aggGR.getValue("level")] = aggGR.getAggregate("COUNT", "level");
+        }
+
+        return levels;
+
+    },
+
+
+    /**
+     * Generate approvals based on catalog item approval definition
+     * @param1 requestGR (GlideRecord), Requested item for which you need to generate approvals
+     * @param2 requestedItemGR (GlideRecord), Related request
+     * @param3 levels (Array), Levels to be return
+     * return array of approval details
+     */
+    generateApprovals: function(requestGR, requestedItemGR, levels) {
+
+        var approvals = {};
+        var approvalRules = this.getApprovalRules();
+
+        var approvalDef = new GlideRecord("x_61049_unified_1_catalog_item_approval_definition");
+        approvalDef.addEncodedQuery("catalog_item_approval.catalog_item=" + this.itemSysId);
+        approvalDef.addEncodedQuery("active=true");
+
+        if (levels && levels.length > 0) {
+            approvalDef.addQuery("level", "IN", levels.join());
+        }
+
+        approvalDef.query();
+
+        if (!approvalDef.next()) {
+            return {
+                "status": "Failed",
+                "message": "No approval configuration found.",
+                "approvals": ""
+            };
+        }
+
+        while (approvalDef.next()) {
+            this._translateAndAddApprovals(requestGR, requestedItemGR, approvalDef, approvals);
+        }
+
+        return {
+            "status": "Success",
+            "message": "Approvals are generated successfully.",
+            "approvals": this.finalizeApprovals(approvals, approvalRules)
+        };
+    },
+
+
+    /**
+     * Get approval rules defined for each levels
+     */
+    getApprovalRules: function() {
+
+        var catItemApp = new GlideRecord("x_61049_unified_1_catalog_item_approval");
+
+        if (catItemApp.get("catalog_item", this.itemSysId)) {
+
+            return {
+                "1": (catItemApp.getValue("approval_rule_one")) ? catItemApp.getValue("approval_rule_one") : "any_one",
+                "2": (catItemApp.getValue("approval_rule_two")) ? catItemApp.getValue("approval_rule_two") : "any_one",
+                "3": (catItemApp.getValue("approval_rule_three")) ? catItemApp.getValue("approval_rule_three") : "any_one",
+                "4": (catItemApp.getValue("approval_rule_four")) ? catItemApp.getValue("approval_rule_four") : "any_one",
+                "5": (catItemApp.getValue("approval_rule_five")) ? catItemApp.getValue("approval_rule_five") : "any_one"
+            };
+
+        }
+    },
+
+
+    /**
+     * Convert approvals JSON object to array and include approval rule
+     * @param1 approvals (JSON), Approvals as JSON
+     * @param2 approvalRules (JSON), Approval rules as JSON
+     * return final approval details as array of JSON
+     */
+    finalizeApprovals: function(approvals, approvalRules) {
+
+        var finalList = [];
+        var object = {};
+        var values = "";
+
+        for (var key in approvals) {
+
+            object = {};
+            object.level = key;
+            object.user = [];
+            object.group = [];
+
+            values = approvals[key];
+
+
+            for (var i = 0; i < values.length; i++) {
+
+                if (values[i].type == "user") {
+                    object.user.push(values[i].value);
+                } else {
+                    object.group.push(values[i].value);
+                }
+
+            }
+
+            object.user = object.user.join();
+            object.group = object.group.join();
+            object.rule = approvalRules[key];
+
+            finalList.push(object);
+
+        }
+
+        return finalList;
+
+    },
+
+
+    _translateAndAddApprovals: function(requestGR, requestedItemGR, approvalDef, approvals) {
+
+        var level = approvalDef.getValue("level");
+        var type = approvalDef.getValue("type");
+        var result = {};
+
+        switch (type) {
+
+            case "group":
+                result.type = type;
+                result.value = approvalDef.getValue("group");
+                break;
+
+            case "user":
+                result.type = type;
+                result.value = approvalDef.getValue("user");
+                break;
+
+            case "dynamic_group":
+                result.type = "group";
+                result.value = this._getValueFromColumn(requestedItemGR, approvalDef.getValue("group_column"));
+                break;
+
+            case "dynamic_user":
+                result.type = "user";
+                result.value = this._getValueFromColumn(requestedItemGR, approvalDef.getValue("column"));
+                break;
+
+            case "advance_scripting":
+                result = this._executeScript(requestGR, requestedItemGR, approvalDef);
+                break;
+        }
+
+        if (level in approvals) {
+            approvals[level].push(result);
+        } else {
+            approvals[level] = [];
+            approvals[level].push(result);
+        }
+
+    },
+
+    _getValueFromColumn: function(requestedItemGR, column) {
+
+        return requestedItemGR.getElement(column).getValue();
+
+    },
+
+    _executeScript: function(requestGR, requestedItemGR, approvalDef) {
+
+        var scriptEvaluator = new GlideScopedEvaluator();
+        scriptEvaluator.putVariable("requestGR", requestGR);
+        scriptEvaluator.putVariable("requestedItemGR", requestedItemGR);
+        scriptEvaluator.putVariable("answer", "");
+        scriptEvaluator.evaluateScript(approvalDef, "script");
+
+        var result = scriptEvaluator.getVariable("answer");
+
+        if (typeof result == "object") {
+            return result;
+        } else {
+            return {
+                "type": "",
+                "value": ""
+            };
+        }
+    },
+
+
+    _getCatalogItem: function(sysId) {
+
+        var scItemGR = new GlideRecord("sc_cat_item");
+
+        if (scItemGR.get(sysId)) {
+            return scItemGR;
+        }
+
+        return false;
+
+    },
+
+    type: 'unifiedCatalogApproval'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-27 13:23:04</sys_created_on>
+        <sys_id>04e3b4b6836f2210ea116830ceaad3d3</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>unifiedCatalogApproval</sys_name>
+        <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+        <sys_update_name>sys_script_include_04e3b4b6836f2210ea116830ceaad3d3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-30 18:49:26</sys_updated_on>
+    </sys_script_include>
+</record_update>

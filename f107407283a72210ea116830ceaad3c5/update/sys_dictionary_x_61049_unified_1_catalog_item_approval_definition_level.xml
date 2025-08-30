@@ -33,7 +33,7 @@
         <function_definition/>
         <function_field>false</function_field>
         <internal_type display_value="Choice">choice</internal_type>
-        <mandatory>false</mandatory>
+        <mandatory>true</mandatory>
         <max_length>40</max_length>
         <name>x_61049_unified_1_catalog_item_approval_definition</name>
         <next_element/>
@@ -58,7 +58,7 @@
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
         <sys_update_name>sys_dictionary_x_61049_unified_1_catalog_item_approval_definition_level</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 11:06:09</sys_updated_on>
+        <sys_updated_on>2025-08-30 09:17:58</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

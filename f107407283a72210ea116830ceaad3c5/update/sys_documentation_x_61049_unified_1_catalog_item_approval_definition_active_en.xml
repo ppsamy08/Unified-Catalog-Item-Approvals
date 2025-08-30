@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_documentation element="column" label="User column" language="en" table="x_61049_unified_1_catalog_item_approval_definition">
+    <sys_documentation element="active" label="Active" language="en" table="x_61049_unified_1_catalog_item_approval_definition">
         <sys_documentation action="INSERT_OR_UPDATE">
-            <element>column</element>
+            <element>active</element>
             <help/>
             <hint/>
-            <label>User column</label>
+            <label>Active</label>
             <language>en</language>
             <name>x_61049_unified_1_catalog_item_approval_definition</name>
-            <plural>User columns</plural>
+            <plural>Active</plural>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-08-27 12:29:41</sys_created_on>
-            <sys_mod_count>1</sys_mod_count>
-            <sys_name>User column</sys_name>
+            <sys_created_on>2025-08-27 13:14:12</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Active</sys_name>
             <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
             <sys_policy/>
             <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
-            <sys_update_name>sys_documentation_x_61049_unified_1_catalog_item_approval_definition_column_en</sys_update_name>
+            <sys_update_name>sys_documentation_x_61049_unified_1_catalog_item_approval_definition_active_en</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-08-30 09:06:26</sys_updated_on>
+            <sys_updated_on>2025-08-27 13:14:12</sys_updated_on>
             <url/>
             <url_target/>
         </sys_documentation>

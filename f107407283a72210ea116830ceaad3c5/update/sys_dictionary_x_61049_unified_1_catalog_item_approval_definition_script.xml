@@ -16,7 +16,15 @@
         <column_label>Script</column_label>
         <comments/>
         <create_roles/>
-        <default_value/>
+        <default_value>/*&#13;
+Write script to get approvals and set answer variable with approval type and value. Script will have access to following objects requestGR, requestedItemGR. For ex,&#13;
+&#13;
+answer = {&#13;
+"type" : "user",&#13;
+"value" : requestGR.requested_for.manager&#13;
+};&#13;
+&#13;
+*/</default_value>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -58,7 +66,7 @@
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
         <sys_update_name>sys_dictionary_x_61049_unified_1_catalog_item_approval_definition_script</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 11:06:09</sys_updated_on>
+        <sys_updated_on>2025-08-30 09:15:19</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

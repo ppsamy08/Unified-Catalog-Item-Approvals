@@ -20,7 +20,7 @@
             <element>approval_rule_one</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Collect approvals from all definitions</label>
+            <label>Collect approval from all definitions</label>
             <language>en</language>
             <name>x_61049_unified_1_catalog_item_approval</name>
             <sequence>100</sequence>
@@ -29,9 +29,9 @@
             <sys_created_on>2025-08-27 13:04:29</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>1</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-08-27 13:04:29</sys_updated_on>
+            <sys_updated_on>2025-08-27 13:52:51</sys_updated_on>
             <value>each_one</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -39,7 +39,7 @@
             <element>approval_rule_one</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Collect approvals from any one definitions</label>
+            <label>Collect approval from any one definition</label>
             <language>en</language>
             <name>x_61049_unified_1_catalog_item_approval</name>
             <sequence>200</sequence>
@@ -48,9 +48,9 @@
             <sys_created_on>2025-08-27 13:05:23</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>2</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-08-27 13:05:23</sys_updated_on>
+            <sys_updated_on>2025-08-27 13:53:20</sys_updated_on>
             <value>any_one</value>
         </sys_choice>
     </sys_choice>

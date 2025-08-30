@@ -14,14 +14,14 @@
         </element>
         <element choice="1" default="any_one" label="Approval rule one" max_length="40" name="approval_rule_one" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Collect approvals from any one definitions" sequence="200" value="any_one"/>
-                <element inactive_on_update="false" label="Collect approvals from all definitions" sequence="100" value="each_one"/>
+                <element inactive_on_update="false" label="Collect approval from any one definition" sequence="200" value="any_one"/>
+                <element inactive_on_update="false" label="Collect approval from all definitions" sequence="100" value="each_one"/>
             </choice>
         </element>
         <element choice="1" choice_field="approval_rule_one" choice_table="x_61049_unified_1_catalog_item_approval" default="any_one" label="Approval rule three" max_length="40" name="approval_rule_three" type="choice">
             <choice/>
         </element>
-        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
         <index name="index">
             <element name="catalog_item"/>
         </index>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Make approval rules readonly</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+
+    var levels = g_scratchpad.levels_count;
+    var keys = {
+        "1": "one",
+        "2": "two",
+        "3": "three",
+        "4": "four",
+        "5": "five"
+    };
+    var newLevels = {};
+
+    for (var i in keys) {
+        newLevels[keys[i]] = (i in levels && levels[i] > 1) ? false : true;
+    }
+
+	for (var key in newLevels) {
+
+		g_form.setReadOnly("approval_rule_"+key, newLevels[key]);
+	}
+
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-27 13:32:44</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6b8674fa836f2210ea116830ceaad3ad</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Make approval rules readonly</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+        <sys_update_name>sys_script_client_6b8674fa836f2210ea116830ceaad3ad</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-27 13:46:24</sys_updated_on>
+        <table>x_61049_unified_1_catalog_item_approval</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
