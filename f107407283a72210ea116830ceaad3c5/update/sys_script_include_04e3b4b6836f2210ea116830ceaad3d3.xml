@@ -67,7 +67,7 @@ unifiedCatalogApproval.prototype = {
 
         approvalDef.query();
 
-        if (!approvalDef.next()) {
+        if (!approvalDef.hasNext()) {
             return {
                 "status": "Failed",
                 "message": "No approval configuration found.",
@@ -76,6 +76,12 @@ unifiedCatalogApproval.prototype = {
         }
 
         while (approvalDef.next()) {
+
+            /* Skip if condition is not matched */
+            if (!this.validateCondition(requestedItemGR.getUniqueValue(), approvalDef.getValue("condition"))) {
+                continue;
+            }
+
             this._translateAndAddApprovals(requestGR, requestedItemGR, approvalDef, approvals);
         }
 
@@ -149,6 +155,26 @@ unifiedCatalogApproval.prototype = {
         }
 
         return finalList;
+
+    },
+
+    validateCondition: function(reqItemSysId, encodedQuery) {
+
+        if (!encodedQuery || encodedQuery == "") {
+            return true;
+        }
+
+        var scReqItemGR = new GlideRecord("sc_req_item");
+        scReqItemGR.addQuery("sys_id", reqItemSysId);
+        scReqItemGR.addEncodedQuery(encodedQuery);
+        scReqItemGR.setLimit(1);
+        scReqItemGR.query();
+
+        if (scReqItemGR.next()) {
+            return true;
+        }
+
+        return false;
 
     },
 
@@ -240,13 +266,13 @@ unifiedCatalogApproval.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-27 13:23:04</sys_created_on>
         <sys_id>04e3b4b6836f2210ea116830ceaad3d3</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>unifiedCatalogApproval</sys_name>
         <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
         <sys_update_name>sys_script_include_04e3b4b6836f2210ea116830ceaad3d3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-30 18:49:26</sys_updated_on>
+        <sys_updated_on>2025-08-30 20:07:23</sys_updated_on>
     </sys_script_include>
 </record_update>
