@@ -158,6 +158,13 @@ unifiedCatalogApproval.prototype = {
 
     },
 
+
+    /**
+     * Validate condition from approval defenition
+     * @param1 reqItemSysId(String), Requested item sys_id for which we are generating approvals
+     * @param2 encodedQuery(String), Condition from approval defenition
+     * return true/false, true - if condition matched, otherwise false
+     */
     validateCondition: function(reqItemSysId, encodedQuery) {
 
         if (!encodedQuery || encodedQuery == "") {
@@ -175,6 +182,67 @@ unifiedCatalogApproval.prototype = {
         }
 
         return false;
+
+    },
+
+    getApprovalRuleForFlowAction: function(approvalObject) {
+
+        var ruleString = "";
+
+
+        switch (approvalObject.rule.toString()) {
+
+            case "any_one":
+
+                ruleString += "ApprovesAny";
+
+                if (approvalObject.user) {
+                    ruleString += "U[" + approvalObject.user + "]";
+                }
+                if (approvalObject.group) {
+                    ruleString += "G[" + approvalObject.group + "]";
+                }
+                break;
+
+            case "each_one":
+                ruleString += "ApprovesAny";
+
+                if (approvalObject.user) {
+
+                    var users = approvalObject.user.split(",");
+                    ruleString += "U[" + users[0] + "]";
+
+                    for (var i = 1; i < users.length; i++) {
+                        ruleString += "&AnyU[" + users[i] + "]";
+                    }
+                }
+                if (approvalObject.group) {
+
+                    var groups = approvalObject.group.split(",");
+                    if (approvalObject.user) {
+                        ruleString += "&AnyG[" + groups[0] + "]";
+                    } else {
+                        ruleString += "G[" + groups[0] + "]";
+                    }
+                    for (var j = 1; j < groups.length; j++) {
+                        ruleString += "&AnyG[" + groups[j] + "]";
+                    }
+                }
+                break;
+
+        }
+
+        ruleString += "OrRejectsAny";
+
+        if (approvalObject.user) {
+            ruleString += "U[" + approvalObject.user + "]";
+        }
+
+        if (approvalObject.group) {
+            ruleString += "G[" + approvalObject.group + "]";
+        }
+
+        return ruleString;
 
     },
 
@@ -266,13 +334,13 @@ unifiedCatalogApproval.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-27 13:23:04</sys_created_on>
         <sys_id>04e3b4b6836f2210ea116830ceaad3d3</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>unifiedCatalogApproval</sys_name>
         <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
         <sys_update_name>sys_script_include_04e3b4b6836f2210ea116830ceaad3d3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-30 20:07:23</sys_updated_on>
+        <sys_updated_on>2025-09-13 16:31:17</sys_updated_on>
     </sys_script_include>
 </record_update>

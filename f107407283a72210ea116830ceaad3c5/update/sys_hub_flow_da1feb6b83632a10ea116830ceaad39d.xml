@@ -16,7 +16,7 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>generate_approvals_from_definition</internal_name>
-        <label_cache>null</label_cache>
+        <label_cache>[{"name":"subflow.requested_item.request","label":"Input➛Requested Item➛Request","reference":"sc_request","reference_display":"Request","type":"reference","base_type":"reference","parent_table_name":"sc_req_item","column_name":"request","choices":[{"label":null,"value":null,"order":0.0}],"usedInstances":{"e1076c62-9a68-4e75-af55-57ed2aca08e1":["request"]},"attributes":null},{"name":"subflow.levels","label":"Input➛Levels","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":[{"label":null,"value":null,"order":0.0}],"usedInstances":{},"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":"","uiUniqueId":"e264c5ab-2c0d-4931-8d2f-29df9fdb58ea"}},{"name":"subflow.requested_item.cat_item.sys_id","label":"Input➛Requested Item➛Item➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"sc_cat_item","column_name":"sys_id","choices":[{"label":null,"value":null,"order":0.0}],"usedInstances":{"e1076c62-9a68-4e75-af55-57ed2aca08e1":["catalog_item_sys_id"]},"attributes":null},{"name":"e1076c62-9a68-4e75-af55-57ed2aca08e1.approvals","label":"1➛Approvals","reference":null,"reference_display":"Approvals","type":"array.object","base_type":"array.object","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"sourceId":"f78926fe-90b9-4cfd-aa5d-4d44860eb396","pwd2droppable":"true","child_name":"Approval","uiUniqueId":"3aace4b2-593c-49e8-a773-4a53d95555bc","uiTypeLabel":"Array.Object","co_type_name":"FD685049d09f0cb210a6abca5dc6292a8b","child_label":"Approval","child_type_label":"Object","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceType":"step","sourceUiUniqueId":"58e06f00-4821-49cb-b1b4-32887135c0b1","uiType":"array.object","child_type":"object","child_uiUniqueId":"887dcc44-af19-45f4-91f2-9b5e71b50370"}},{"name":"subflow.requested_item","label":"Input➛Requested Item","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","parent_table_name":null,"column_name":"","choices":[{"label":null,"value":null,"order":0.0}],"usedInstances":{"e1076c62-9a68-4e75-af55-57ed2aca08e1":["requested_item"],"d692af24-7954-474b-b796-9f0c81e276a1":["record"]},"attributes":{"sourceId":"","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceUiUniqueId":"","sourceType":"","uiType":"reference","uiUniqueId":"4094a82a-3394-4ce0-8aea-f958a3843349"}}]</label_cache>
         <latest_snapshot/>
         <master_snapshot/>
         <master_snapshot_digest/>
@@ -38,7 +38,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>da1feb6b83632a10ea116830ceaad39d</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>Generate Approvals from Definition</sys_name>
         <sys_overrides/>
         <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
@@ -46,11 +46,11 @@
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
         <sys_update_name>sys_hub_flow_da1feb6b83632a10ea116830ceaad39d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-30 11:08:52</sys_updated_on>
+        <sys_updated_on>2025-09-13 16:32:05</sys_updated_on>
         <type>subflow</type>
         <updation_source/>
         <version>2</version>
-        <version_record display_value="Created 2025-08-30 04:08:42">2ea27feb83a32a10ea116830ceaad3c9</version_record>
+        <version_record display_value="Created 2025-09-13 09:31:56">cee20918830cb210ea116830ceaad30e</version_record>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=da1feb6b83632a10ea116830ceaad39d"/>
     <sys_variable_value action="delete_multiple" query="document_key=da1feb6b83632a10ea116830ceaad39d"/>
@@ -69,7 +69,114 @@
         <sys_updated_on>2025-08-30 10:53:08</sys_updated_on>
     </sys_flow_cat_variable_model>
     <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=6a1feb6b83632a10ea116830ceaad39e"/>
-    <sys_hub_flow_input action="delete_multiple" query="model=da1feb6b83632a10ea116830ceaad39d^sys_idNOT IN8c9fefab83632a10ea116830ceaad3ea"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=da1feb6b83632a10ea116830ceaad39d^sys_idNOT IN6f9c05418377e250ea116830ceaad39a,8c9fefab83632a10ea116830ceaad3ea"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD50ec4d41ea77e250a9fc8692f8310977</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>f107407283a72210ea116830ceaad3c5</scope_name>
+        <serialized_content>{"FlowDesigner:FD50ec4d41ea77e250a9fc8692f8310977":{"$COCollectionField":["String"],"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD50ec4d41ea77e250a9fc8692f8310977.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Levels\",\"mandatory\":\"false\",\"child_name\":\"Level\",\"uiTypeLabel\":null,\"co_type_name\":\"FD50ec4d41ea77e250a9fc8692f8310977\",\"child_label\":\"Level\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.string\",\"order\":\"1\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-03 14:55:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>14ec4d418377e250ea116830ceaad377</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-03 14:55:16</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=Level,child_name=Level,co_type_name=FD50ec4d41ea77e250a9fc8692f8310977,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=array.string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>levels</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Levels</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Generate Approvals from Definition">da1feb6b83632a10ea116830ceaad39d</model>
+        <model_id>da1feb6b83632a10ea116830ceaad39d</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_da1feb6b83632a10ea116830ceaad39d</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-03 14:54:08</sys_created_on>
+        <sys_id>6f9c05418377e250ea116830ceaad39a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-03 14:55:16</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=6f9c05418377e250ea116830ceaad39a"/>
     <sys_hub_flow_input action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -115,7 +222,7 @@
         <model_table>sys_hub_flow</model_table>
         <name>var__m_sys_hub_flow_input_da1feb6b83632a10ea116830ceaad39d</name>
         <next_element/>
-        <order>1</order>
+        <order>2</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -133,14 +240,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-30 10:55:09</sys_created_on>
         <sys_id>8c9fefab83632a10ea116830ceaad3ea</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-30 10:55:09</sys_updated_on>
+        <sys_updated_on>2025-09-03 14:54:08</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -327,12 +434,60 @@
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a1af23eb83632a10ea116830ceaad30d"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=da1feb6b83632a10ea116830ceaad39d"/>
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=da1feb6b83632a10ea116830ceaad39d"/>
-    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=da1feb6b83632a10ea116830ceaad39d"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=da1feb6b83632a10ea116830ceaad39d^sys_idNOT IN035c81898337e250ea116830ceaad30a,75a04514830cb210ea116830ceaad355"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Approvals">b55f34c583f3e250ea116830ceaad381</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Generate Approvals from Definition">da1feb6b83632a10ea116830ceaad39d</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-03 14:53:00</sys_created_on>
+        <sys_id>035c81898337e250ea116830ceaad30a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-13 16:14:47</sys_updated_on>
+        <ui_id>e1076c62-9a68-4e75-af55-57ed2aca08e1</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1XW4/aOBT+KyM/Y5TESUh4qwYhjTTbSp3dvlRVdLCPGWtNQnOhZRH/fZ07t6FQwW4f+gbHPj637/tif94QJciYBOhJ5nIvYJKh41kItu0HzOIIIFggyIDEsECzM8WvBWa5MaxAF6Vls8mKmdTJt2GzhiJSOS7av9ut2SxUttSw/tT4GAt/VVqkGJPx5y8DsoTUnJ9jSsabg6VLE9QwQ222fuwyPEo5Xy9rg0RzPMfG9Nx59vYkFWUybEDwe46xQJOFBJ3hgCwgFpAn6ZqM87QwhhRBfIj1utvxquK8rnIB3zP1jwnKnMFO3DHJeNTn1S1ETZ/2ypATyOHFhOJ5kXbdSxTHrO6QQAmFzh93bfWGD8tcJXHtksNMH0XmiS4W8fu6UaQ7amdORWaywmXZgrKopkL58pp86/o1VXHVrWZRJxz0zlaElL9OFepyknGxmJm9AwJ5nqpZkZcZb0ih/nxjEqhxYUJHC1guVTyPlmmyUlU4k/1iONfmz7DEn0kzU/N4CLwsemhmBMOpsU8q8ydIVdmBP8wxVfw64gEcCvVXrExznspUQ4DAZr5PuWvb1LVCl4bcFTS0QTiSWwaTkmwHJFtnjxqyrG+jOTL6WpRNqJvatC+qZ1G68FQt83cm0xU2ndoOGjKy8CzW3R7Z3JSok3lFt8hkESlxCTGNW/2jdjlF0Kt8r6PyBeW1VH6s63t4MgEfXtbZw9PkR8U3FM8MtuL5Ab9fWmNDbvtW5A4sy9qn9xukvj2b/xsOn+Nq19W7E7Ub6h5LLcl8cJ0RhRH3qevPAjqzR5yOJLNhJEMnDO/BUhfOwTh0eqBqXKHOThKzXjpPwJ09lxFtQ2SptVPgmJsmHk/sXZrCetjNrXKNWs49l+E6a0mfbunukz6GeZ/F7vxra9PeNuE9UHjSZ9JjAWVBYFHXdZAGPiD1Q8vjVmiHI+l3B+152igZGFfqubZDXY4+BRZ41LdHkjvCBvBZiY1VT6/jy80J4LRGMw7jbTQE0xj0s4r/PnUfqiC2o4TPLYaaoqeTkajxZ4kaf+D5wrI5ChEiGCD2WgjVuE8q4gESGl10z+tiY7lEGH3vF1fGxjI5muCNJbMVlOs0qDqKbFs8XCA5b+Gl06DfmPh/v5aH2pvUEnsNrX8dve6+zAdwukK1f1aBf0bvb38JkPbZu2x49AhtrtEX3NJv8my+IL+DZzOK6rZ9JvHrH9HOfR/RbWJnXtF9VXd5TLcZ/H5Nn3lNj1wGdmhJ6qJl7unAJJ05IGkQBuA4EgCFe0OKfvkXfCe3L9wSAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=035c81898337e250ea116830ceaad30a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Generate Approvals from Definition">da1feb6b83632a10ea116830ceaad39d</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>68c3a48e-a25f-44a6-b186-ee17da9b66b1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-13 16:22:05</sys_created_on>
+        <sys_id>75a04514830cb210ea116830ceaad355</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-13 16:31:55</sys_updated_on>
+        <ui_id>d692af24-7954-474b-b796-9f0c81e276a1</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1XwW7bOBD9FUOnFnC8lGUrcnoKYgTIYrcFkmwvbUFQJGVzQUuuSDZJDf/7DkXK0tqOazcukBS5GOYMOXozfI8cfloEggVnAR/E0RB+TrMIhf0QJTxOEjpChCZxPBxEQTfIyYzDTDKfl8U3InHJiSpycMDAWA/8ZULNJXn42FjoVEhW8jw4+/SlG8xJCVE0L4OzxZprXxiSpFzC1HOPo3Nd43gUoH6YW4fSpcgnfvyXD3NTG4uSWVj9bsDvNc8ZBzwZkYp3gxnJGdFF+bCyQGj2IZeNYSpy7RKekXslvsP3whjZiRmHFKmvxmqIfaWcORsTTQCJodqUq8IVgnLlisN4RozUF22bm/BhrgUkWS3RJJX16kKaWf7eVSRYBWhtjFEAgs9tpha6zyO7mRZ31zXKS5FXRfFOWVAiVyOioXSp0RbPIjDidltVueQziI9nsCtgwXZrRBUTIM56EwmDXiaLO8CixCTvEWrz6UG9Se8S7OPK/JGUwib3N4SBxV3/ufamGvFPLr4afmV5FPfTeIQSdsIylJ4Mkmh4QihHJzwOh3zIYjoMo2DZDdSDupBEqaZQsEP4q7FpurL5AmFXY7uElmKuzwHmN+5rsex6FaEw6/PRqI/SEKEIoWRIURLxNDqNTyPCki0kzQSXrCWi2rEpppbnMFHtgWpDVJce1mNwvaSqIa4m/V9W1frOe+c4urQShF6StuDjT5HWr9HQ4ex3JfiBBOhOsvHWRfJvYcp8hwLwVKiKGY8qoTXjMEXsAbJWxJ8O5bog1sH/jB6iVz38/no4TXZRjaKGUiWnQIyWEBYLZVKbR6/kcLEpzRkWms+WyyN0WnvgqiVwXQNbB+pJzwpqqg0RbI31Y+/pXI0b2qPdtHfk2If1Uf+V88+S83S4i1vZqKESM1AkovlxXxF7fL/m9tjwztgB2IRUvxvolDMjnRlrsXG43/gJVaQ/bkX7kB8e7ZAfvKQj/unPCbzqd4F1IJ5f9pg4/jNgsJN/vEW2VSdDi5wJC1YdVwp7QFkd88Bg9SNoXhLNG9svasuheZl7p5fC4FgH/wtrd56qhedLe7dlzmaRbuMMmHctArKXHaOFVJ3PBijKOjm/69zjOESDETa5gJaa4bDn/11ATrKY1BR78/bd57zksLW5C9KbcF07Lf0ui9JW4LyqyJuM4aoouI9xVpSYEzrt2Zbq7btguVzpN6U7eyPaiMTRolGsohh6tapL2xTvdd3Fda6c/zAp74GqlvKth7WG0ou3Gm57pFTL1h4p4YH3l9vdraJ9lewzkKy7qb78B53F6R34FQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=75a04514830cb210ea116830ceaad355"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=da1feb6b83632a10ea116830ceaad39d"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=da1feb6b83632a10ea116830ceaad39d^sys_idNOT INe2a27feb83a32a10ea116830ceaad3c2"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=da1feb6b83632a10ea116830ceaad39d^sys_idNOT IN76fef810830cb210ea116830ceaad3a2"/>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">2aa27feb83a32a10ea116830ceaad3c1</block>
+        <block display_value="">fafef810830cb210ea116830ceaad3a1</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -340,53 +495,30 @@
         <flow display_value="Generate Approvals from Definition">da1feb6b83632a10ea116830ceaad39d</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>1</order>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
         <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-08-30 11:08:42</sys_created_on>
-        <sys_id>e2a27feb83a32a10ea116830ceaad3c2</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_created_on>2025-09-13 16:14:47</sys_created_on>
+        <sys_id>76fef810830cb210ea116830ceaad3a2</sys_id>
+        <sys_mod_count>3</sys_mod_count>
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-30 11:08:42</sys_updated_on>
-        <ui_id>342a31b7-8ecf-4492-8cd7-283097244dda</ui_id>
+        <sys_updated_on>2025-09-13 16:22:05</sys_updated_on>
+        <ui_id>68c3a48e-a25f-44a6-b186-ee17da9b66b1</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <values>H4sIAAAAAAAA/6VTy27bMBD8F55lQZJj+XELEgQI0DZAEuRSBMKKXNlEKVIlqTiqoH/v0nokyKlAT9YOd3ZnhnTPTOub1rtnc+2cPGp2+PkaMakDRt89k4IdWLoX1T5N9nyd5essSbLdVVrm6zLNxBpQ5CxiGmqkTumxdlS+gWpD3feYJtuc59lqD/ludYXbzQqqzWa12aLIgEOywzSGprGGOG4YiCykaxR0L/8zg5+kEhYnQw1Y0ufRskP/5ehfDSooUVHr/eTwi2HfNaG0yI0VM/Bt4jwuKP0EEVkSMXz3qAXS+opEY8Rq0AK8sR07eNsSYBHEg1bd0nGS2tM4FnrfnfxDG9MkCY0VkiGO4+FSFlOSI1zdgocnGs19a6dWfjKSoxujEFhBq/zNZ2xseGi8NHqkeCjVzDaqrfWPMQm2DJgvjpDWkQhsgtEgffJRPZ3M+XFWeSf1JZTpUBkOaqnAeyvL1gc9PUOFNQ0qarpsqY9FuHF5IZOWOj4qKuJKmTMtDc85Bh6Ex5QrxHeE317gF7AyuPhOY4g8RMx17kaBcx9eKMTidxuUjM4mD8UYQ6BwKxt/TQvecJI7vIaXP85eMuXSkYTngN3P/6tw0NELkvwzdDb2VxD/gQ1/AWZxcFqhAwAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=da1feb6b83632a10ea116830ceaad39d"/>
-    <sys_hub_flow_variable action="delete_multiple" query="model=da1feb6b83632a10ea116830ceaad39d^sys_idNOT INb7ef67eb83632a10ea116830ceaad352"/>
-    <sys_complex_object action="INSERT_OR_UPDATE">
-        <label/>
-        <name>FD37ef67eb09632a106c94f21ab3362d51</name>
-        <namespace>FlowDesigner</namespace>
-        <scope_name>f107407283a72210ea116830ceaad3c5</scope_name>
-        <serialized_content>{"FlowDesigner:FD37ef67eb09632a106c94f21ab3362d51":{"$COCollectionField":[{"Approval":{"Group":"String","Group.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":null,\"label\":\"Group\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"65000\"}"},"User":"String","User.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":null,\"label\":\"User\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"65000\"}"},"Level":"String","Level.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":null,\"label\":\"Level\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"65000\"}"},"Rule":"String","Rule.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":null,\"label\":\"Rule\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"65000\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Approvals Definition\",\"mandatory\":\"false\",\"child_name\":\"Approval\",\"uiUniqueId\":\"b64c4cfc-66ff-4629-b88a-425f52861c85\",\"uiTypeLabel\":null,\"co_type_name\":\"FD37ef67eb09632a106c94f21ab3362d51\",\"child_label\":\"Approval\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"1\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"16a7b1dc-6c2b-42bc-9eb6-f99ee1a1d1a1\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD37ef67eb09632a106c94f21ab3362d51.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Approvals Definition\",\"mandatory\":\"false\",\"child_name\":\"Approval\",\"uiUniqueId\":\"b64c4cfc-66ff-4629-b88a-425f52861c85\",\"uiTypeLabel\":null,\"co_type_name\":\"FD37ef67eb09632a106c94f21ab3362d51\",\"child_label\":\"Approval\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"1\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"16a7b1dc-6c2b-42bc-9eb6-f99ee1a1d1a1\"}"}}</serialized_content>
-        <sys_class_name>sys_complex_object</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-08-30 10:56:47</sys_created_on>
-        <sys_domain>global</sys_domain>
-        <sys_domain_path>/</sys_domain_path>
-        <sys_id>f7ef67eb83632a10ea116830ceaad351</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name/>
-        <sys_overrides/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-30 10:58:15</sys_updated_on>
-        <type>complex_object_collection</type>
-    </sys_complex_object>
+    <sys_hub_flow_variable action="delete_multiple" query="model=da1feb6b83632a10ea116830ceaad39d^sys_idNOT IN1c594d898337e250ea116830ceaad3bf,985941c98337e250ea116830ceaad382"/>
     <sys_hub_flow_variable action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>child_label=Approval,child_name=Approval,child_type=object,child_type_label=Object,child_uiUniqueId=16a7b1dc-6c2b-42bc-9eb6-f99ee1a1d1a1,co_type_name=FD37ef67eb09632a106c94f21ab3362d51,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=array.object,uiUniqueId=b64c4cfc-66ff-4629-b88a-425f52861c85</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=a7aff3c8-4f69-4612-ae31-cfbee125ede1</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -410,7 +542,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>approvals_definition</element>
+        <element>message</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -419,9 +551,92 @@
         <help/>
         <hint/>
         <internal_type display_value="String">string</internal_type>
-        <label>Approvals Definition</label>
+        <label>Message</label>
         <mandatory>false</mandatory>
-        <max_length>65000</max_length>
+        <max_length>8000</max_length>
+        <model display_value="Generate Approvals from Definition">da1feb6b83632a10ea116830ceaad39d</model>
+        <model_id>da1feb6b83632a10ea116830ceaad39d</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_da1feb6b83632a10ea116830ceaad39d</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-03 14:39:41</sys_created_on>
+        <sys_id>1c594d898337e250ea116830ceaad3bf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-03 14:54:25</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=a21d090a-6546-4b15-a942-8554b964af88</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Status</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
         <model display_value="Generate Approvals from Definition">da1feb6b83632a10ea116830ceaad39d</model>
         <model_id>da1feb6b83632a10ea116830ceaad39d</model_id>
         <model_table>sys_hub_flow</model_table>
@@ -443,16 +658,16 @@
         <staged>false</staged>
         <sys_class_name>sys_hub_flow_variable</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-08-30 10:56:47</sys_created_on>
-        <sys_id>b7ef67eb83632a10ea116830ceaad352</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2025-09-03 14:39:42</sys_created_on>
+        <sys_id>985941c98337e250ea116830ceaad382</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-30 10:56:47</sys_updated_on>
+        <sys_updated_on>2025-09-03 14:54:24</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -488,6 +703,29 @@
         <url/>
         <url_target/>
     </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>levels</element>
+        <help/>
+        <hint/>
+        <label>Levels</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_da1feb6b83632a10ea116830ceaad39d</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-03 14:54:08</sys_created_on>
+        <sys_id>f79c05418377e250ea116830ceaad39e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-03 14:54:08</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_da1feb6b83632a10ea116830ceaad39d"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>message</element>
@@ -502,7 +740,7 @@
         <sys_created_on>2025-08-30 10:55:32</sys_created_on>
         <sys_id>a5afa3eb83632a10ea116830ceaad38a</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Message</sys_name>
         <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
@@ -525,7 +763,7 @@
         <sys_created_on>2025-08-30 10:55:09</sys_created_on>
         <sys_id>cc9fefab83632a10ea116830ceaad3f9</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Status</sys_name>
         <sys_package display_value="Unified Catalog Item Approvals" source="x_61049_unified_1">f107407283a72210ea116830ceaad3c5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Unified Catalog Item Approvals">f107407283a72210ea116830ceaad3c5</sys_scope>
